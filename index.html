@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="reset.css" type="text/css">
+    <meta name="theme-color" content="#000000">
+</head>
+<body>
+    
+<!--If the iPad is not landscape-->
+<div class="message">
+    <h1>Please rotate your iPad</h1>
+</div>  
+    
+    
+<!--otherwise, do everything at the bottom-->
+<input type="range" oninput="getNumber()" id="myRange" value="0" max="100">
+   
+<div id="demo"></div>
+
+<script>
+function getNumber() {
+    var x = document.getElementById("myRange").value;
+    
+    if(x==100) {
+        document.getElementById("demo").innerHTML=
+            "<iframe width='560' height='315' src='https://www.youtube.com/embed/vQgFfRQolzw' frameborder='0' allowfullscreen>" + "</iframe>";
+    }
+}
+    
+</script>
+
+</body>
+</html>
+

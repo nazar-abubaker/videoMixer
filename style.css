@@ -1,0 +1,49 @@
+:root {
+    
+}
+
+.message {
+    width:100%;
+    height:100%;
+}
+
+.input {
+    display:none;
+}
+
+/*When user screen is landscape*/
+@media only screen and (orientation:landscape) {
+
+html, body {
+ background-color:grey;
+ background-image:url('img/greyBackground.png');
+}    
+
+.message {
+    display:none;
+}
+
+    /*
+input[type="range"] {
+    width:300px;
+    transform: rotate(270deg);
+    margin-top:15%;
+} */
+
+    input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 32px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+#demo {
+ position:absolute; top:0; 
+ left:0; 
+ z-index: 999;
+}
