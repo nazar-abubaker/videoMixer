@@ -1,14 +1,15 @@
-:root {
-    
+html, body {
+    font-family:sans-serif !important;
 }
-
 
 .message {
     width:100%;
     height:100%;
+    text-align: center;
+    margin:50% auto;
 }
 
-.input {
+input, table {
     display:none;
 }
 
@@ -20,7 +21,11 @@ html, body {
  background-image:url('img/greyBackground.png');
 }    
 
-.message {
+input, table {
+    display: block;
+}
+    
+.message{
     display:none;
 }
 
@@ -71,7 +76,6 @@ to provide a positioning context for the range input and other elements.*/
     position: absolute;
     opacity: 1;
     pointer-events: none;
-    box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.50);
 }
 /* .sliderthumb can be any css you like including an image. 
 	The dimensions must match those found in the rule for 
@@ -80,7 +84,7 @@ to provide a positioning context for the range input and other elements.*/
 .sliderthumb {
   width: 40px;
   height: 40px;
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/358203/thumb.png');
+  background-image: url('img/redSlider.png');
   background-size: 40px 40px;
   background-position: 0px 0px;
   background-repeat: no-repeat;
@@ -93,6 +97,7 @@ to provide a positioning context for the range input and other elements.*/
   margin: 0px;
   text-align: center;
   pointer-events: none;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
 }
     
 /* First we have to make transparent all the default elements of the range input.
@@ -201,7 +206,8 @@ input[type=range]::-ms-tooltip {
 td,
 tr,
 th {
-  width: 400px;
+  width: 50px;
   border: 0 none !important;
+margin:0 auto;
 }
 /*******************/
