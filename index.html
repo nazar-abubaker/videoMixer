@@ -14,7 +14,10 @@
     
     
 <!--otherwise, do everything at the bottom-->
-<!--<input type="range" oninput="getNumber()" id="myRange" value="0" max="100">-->
+<div class="topMessage">
+    <p id="demo"></p>
+</div>
+
     
 <table class="slider2column">
   <tr>
@@ -23,34 +26,31 @@
         <div class="sliderfill" id="sliderfill3"></div>
         <div class="slidertrack" id="slidertrack3"></div>
         <div class="sliderthumb" id="sliderthumb3"></div>
-        <div class="slidervalue" id="slidervalue3">0</div>
-        <input class="slidervertical" id="slider3" type="range" min="0" max="100" value="0" oninput="showValue(value,3,true);getNumber()" onchange="showValue(value,3,true);" orient="vertical" />
+        <div class="slidervalue" id="slidervalue3"></div>
+        <input class="slidervertical" id="slider3" type="range" min="0" max="100" value="0" oninput="showValue(value,3,true);getNumber()" orient="vertical" />
       </div>
     </td>
   </tr>
 </table>
-    
-    
-    
-    
-    
-    
-    
-   
-<div id="demo"></div>
-
+ 
 <script>
-/*
 function getNumber() {
     var x = document.getElementById("slider3").value;
-    
-    if(x==100) {
-        document.getElementById("demo").innerHTML=
-            "<iframe width='560' height='315' src='https://www.youtube.com/embed/vQgFfRQolzw' frameborder='0' allowfullscreen>" + "</iframe>";
+
+    if(x<=25) {
+        document.getElementById("demo").innerHTML = "Scroll up";
+    } else if (x<=50) {
+        document.getElementById("demo").innerHTML = "Halfway there!";
+    } else if (x<=75) {
+        document.getElementById("demo").innerHTML = "Getting closer!";
+    } else if (x<=99) { 
+        document.getElementById("demo").innerHTML = "Almost there!";
+    } else {
+        document.getElementById("demo").innerHTML = "Congratulations!";
     }
 }
-*/
-    
+
+
 /* Code by Steven Estrella. http://www.shearspiremedia.com */
 /* we need to change slider appearance oninput and onchange */
 function showValue(val, slidernum, vertical) {

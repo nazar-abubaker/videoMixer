@@ -30,9 +30,18 @@ input, table {
 }
 
 #demo {
- position:absolute; top:0; 
- left:0; 
- z-index: 999;
+    text-align: center;
+    font-size:24px;
+    color:rgba(0,0,0,0.5);
+    margin:2em 0;
+}
+    
+.topMessage {
+    margin:0 auto 3em auto;
+    width:490px;
+    height:141px;
+    background:white;
+    border:1px solid rgba(255,255,255,0.5);
 }
 
     
