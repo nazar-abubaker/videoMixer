@@ -3,13 +3,14 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="reset.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <meta name="theme-color" content="#000000">
 </head>
-<body>
+<body onload="setValue(0,3,true)">
     
 <!--If the iPad is not landscape-->
 <div class="message">
-    <h1>Please rotate your iPad</h1>
+    <h1>Please rotate your device</h1>
 </div>  
     
     
@@ -26,13 +27,16 @@
         <div class="sliderfill" id="sliderfill3"></div>
         <div class="slidertrack" id="slidertrack3"></div>
         <div class="sliderthumb" id="sliderthumb3"></div>
-        <div class="slidervalue" id="slidervalue3"></div>
+        <div class="slidervalue" id="slidervalue3">0</div>
         <input class="slidervertical" id="slider3" type="range" min="0" max="100" value="0" oninput="showValue(value,3,true);getNumber()" orient="vertical" />
       </div>
     </td>
   </tr>
 </table>
  
+    
+    
+<script src="firework.js"></script>
 <script>
 function getNumber() {
     var x = document.getElementById("slider3").value;
@@ -71,9 +75,12 @@ function showValue(val, slidernum, vertical) {
     var filloffset = 10;
     var bordersize = 2;
     var loc = vertical ? (1 - pc) * tracksize : pc * tracksize;
-
+    var degrees = 360 * pc;
+    var rotation = "rotate(" + degrees + "deg)";
+    
+    
     rangevalue.innerHTML = val;
-
+    
     fill.style.opacity = pc + 0.2 > 1 ? 1 : pc + 0.2;
 
     rangevalue.style.top = (vertical ? loc : 0) + "px";
