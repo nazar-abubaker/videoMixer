@@ -1,5 +1,8 @@
 html, body {
     font-family: 'Montserrat', sans-serif !important;
+    border:0 !important;
+    outline:0 !important;
+    /*position: fixed;*/
 }
 
 .message {
@@ -8,62 +11,55 @@ html, body {
     text-align: center;
 }
 
-canvas {
-    position:absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height:100%;
-    background:black;
-}
 
-
-#firework {
-    width:100%;
-    height:500px;
-    position: absolute;
-    top:0;
-    left:0;
-    z-index:999;
-}
-
-input, table {
-    display:none;
-}
 
 /*When user screen is landscape*/
 @media only screen and (orientation:landscape) {
 
-html, body {
- background-color:grey;
- background-image:url('img/greyBackground.png');
-}    
+    html, body {
+     background-color:grey;
+     background-image:url('img/greyBackground.png');
+    }    
 
-input, table {
-    display: block;
-}
-    
-.message{
-    display:none;
-}
+    input, table {
+        display: block;
+    }
 
-#demo {
-    text-align: center;
-    font-size:24px;
-    color:rgba(0,0,0,0.5);
-    margin:2em 0;
-}
-    
-.topMessage {
-    margin:0 auto 3em auto;
-    width:490px;
-    height:141px;
-    background:white;
-    border:1px solid rgba(255,255,255,0.5);
-}
+    .message{
+        display:none;
+    }
 
+    #demo {
+        text-align: center;
+        font-size:24px;
+        color:rgba(0,0,0,0.5);
+        margin:2em 0;
+    }
+
+    .topMessage {
+        margin:0 auto 3em auto;
+        width:490px;
+        height:141px;
+        background:white;
+        border:1px solid rgba(255,255,255,0.5);
+    }
     
-/*******************/
+    .sidebar {
+    width:200px;
+    height:500px;
+    background:red;
+    position:absolute;
+    top:0;
+    display:block;
+    overflow: hidden;
+    }
+
+.left {float:left; left:0;}
+.right {float:right; right:0;}
+
+
+.slidervalue {color:transparent!important;}
+    /*******************/
  @charset "UTF-8";
 /* CSS by Steven Estrella. http://www.stevenestrella.com */
 /* The .slider and .slidervertical classes are for the range inputs. 
@@ -75,7 +71,7 @@ input, table {
   left: 0px;
   top: 0px;
   overflow: visible;
-  z-index: 100;
+  z-index: 99999;
 }
 /* slidershell exists only
 to provide a positioning context for the range input and other elements.*/
@@ -90,7 +86,7 @@ to provide a positioning context for the range input and other elements.*/
 /* .slidertrack is the visible track on which the user drags the thumb button. */
 
 .slidertrack {
-  border: 2px outset #666;
+  border: 2px outset rgba(255,255,255,0.1);
   border-radius: 4px;
   position: absolute;
   background:rgba(0,0,0,0.5);
@@ -187,6 +183,7 @@ input[type=range]:focus {
 /* Make the thumbs the same size as your custom sliderthumb. 
 	they will not be visible but they will be draggable. 	*/
 
+/*
 input[type=range]::-ms-thumb {
   width: 40px;
   height: 40px;
@@ -211,6 +208,7 @@ input[type=range]::-webkit-slider-thumb {
   background: transparent;
   -webkit-appearance: none;
 }
+*/
 /* microsoft IE10+ and Edge - eliminates default fills before and after thumb */
 
 input[type=range]::-ms-fill-lower {
@@ -225,7 +223,7 @@ input[type=range]::-ms-fill-upper {
 
 input[type=range]::-ms-tooltip {
   display: none;
-}
+} 
 
     
     /* other rules you may need for page styling */
@@ -238,3 +236,25 @@ th {
 margin:0 auto;
 }
 /*******************/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}

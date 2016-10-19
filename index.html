@@ -16,11 +16,14 @@
     
 <!--otherwise, do everything at the bottom-->
     
+<!--
     <div class="topMessage">
         <p id="demo"></p>
     </div>
+-->
 
-
+    <div class="sidebar left"></div>
+    
     <table class="slider2column">
       <tr>
         <td>
@@ -28,25 +31,17 @@
             <div class="sliderfill" id="sliderfill3"></div>
             <div class="slidertrack" id="slidertrack3"></div>
             <div class="sliderthumb" id="sliderthumb3"></div>
-            <div class="slidervalue" id="slidervalue3">0</div>
-            <input class="slidervertical" id="slider3" type="range" min="0" max="100" value="0" oninput="showValue(value,3,true);getNumber();firework()" orient="vertical" />
+            <div class="slidervalue" id="slidervalue3"><span>0</span></div>
+            <input class="slidervertical" id="slider3" type="range" min="0" max="100" value="0" oninput="showValue(value,3,true);getNumber();" orient="vertical" />
           </div>
         </td>
       </tr>
     </table>
     
+    <div class="sidebar right"></div>
+
     
-    
-<script src="firework.js"></script>
 <script>
-function firework() {
-    var x = document.getElementById("slider3").value;
-    
-    if(x==100) {
-        document.getElementById("firework").innerHTML += "<canvas id='canvas'></canvas>";
-    }
-}    
-    
 function getNumber() {
     var x = document.getElementById("slider3").value;
 
@@ -82,7 +77,7 @@ function showValue(val, slidernum, vertical) {
     var tracksize = bigval - thumbsize;
     var fillsize = 4.5;
     var filloffset = 10;
-    var bordersize = 2;
+    var bordersize = 4;
     var loc = vertical ? (1 - pc) * tracksize : pc * tracksize;
     var degrees = 360 * pc;
     var rotation = "rotate(" + degrees + "deg)";
