@@ -22,7 +22,10 @@
     </div>
 -->
 
-    <div class="sidebar left"></div>
+    <div class="sidebar left">
+        <div class="dial"></div>
+        <div class="dial"></div>
+    </div>
     
     <table class="slider2column">
       <tr>
@@ -38,7 +41,10 @@
       </tr>
     </table>
     
-    <div class="sidebar right"></div>
+    <div class="sidebar right">
+        <div class="dial"></div>
+        <div class="dial"></div>
+    </div>
 
     
 <script>
@@ -71,13 +77,13 @@ function showValue(val, slidernum, vertical) {
     var slider = document.getElementById("slider" + slidernum);
 
     var pc = val / (slider.max - slider.min); /* the percentage slider value */
-    var thumbsize = 40; /* must match the thumb size in your css */
+    var thumbsize = 100; /* must match the thumb size in your css */
+    var smallval = 100; /* narrowest or shortest value depending on orientation */
     var bigval = 400; /* widest or tallest value depending on orientation */
-    var smallval = 40; /* narrowest or shortest value depending on orientation */
     var tracksize = bigval - thumbsize;
     var fillsize = 4.5;
     var filloffset = 10;
-    var bordersize = 4;
+    var bordersize = 35;
     var loc = vertical ? (1 - pc) * tracksize : pc * tracksize;
     var degrees = 360 * pc;
     var rotation = "rotate(" + degrees + "deg)";
