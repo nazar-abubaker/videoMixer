@@ -10,7 +10,9 @@ html, body {
     text-align: center;
 }
 
-
+.sidebar, .slider2column {
+    display: none;
+}
 
 /*When user screen is landscape*/
 @media only screen and (orientation:landscape) {
@@ -247,26 +249,11 @@ th {
     width: 100px;
     border: 0 none !important;
     margin:0 auto;}
+    
+    .slider2column {
+        display:block;
+    }
 /*******************/
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
 }
