@@ -1,31 +1,46 @@
+
+#slider-vertical {
+    height:600px;
+    margin:5em auto 0 auto;
+    border: 2px solid rgba(255,255,255,0.1);
+    background:rgba(0,0,0,0.5);
+    border-radius: 5px;
+    width:5px;
+}
+
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 10 !important;
+    width: 100px !important;
+    height: 100px !important;
+    cursor: default;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
 .ui-slider-vertical .ui-slider-handle {
-    left: -2.9em;
+    left: -2.5em;
     margin-left: 0;
     margin-bottom: -.6em;
 }
 
+.ui-slider .ui-slider-handle {
+    width:100px !important;
+    height:100px !important;
+}
+
+.ui-slider-vertical {
+    height: 500px !important;
+    width: 5px !important;
+}
+
 .ui-slider-handle {
-  width:100px !important;
-  height:100px !important;
-  background-image: url('img/redSlider.png') !important;
-  background-size: 100px 100px !important;
-  background-position: center !important;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border:0 !important;
-  outline:0 !important;
-  box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
-}
-
-#slider-vertical {
-    height:400px;
-    margin: 10em auto 0 auto;
-    border: 2px solid rgba(255,255,255,0.1);
-    background:rgba(0,0,0,0.5);
-    border-radius: 5px;
-    width:5px
-}
-
-.ui-slider-range {
-    background:transparent;
+    background-image: url('img/redSlider.png') !important;
+    background-size: 100px 100px !important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border:0 !important;
+    outline:0 !important;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
 }
