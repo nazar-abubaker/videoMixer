@@ -2,20 +2,41 @@
 <html>
 <head>
     <link href="style.css" type="text/css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width,initial-scale=1.01,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <script>
+    function popup() {
+        alert('MESSAGE CAN GO HERE');
+    }
+    </script>
 </head>    
 <body>
+
+    <div class="sidebar left">
+        <div class="dial"></div>
+        <div class="dial"></div>
+    </div>
+    
+    <div class="button-frame plastic" onclick='popup()'>
+        <div class="the-button plastic"></div>
+    </div>
+
+    <div class="sidebar right">
+        <div class="dial"></div>
+        <div class="dial"></div>
+    </div>    
     
     <!--
     <div id="light"></div>
-    <button href="#" onclick="lightOn()"></button>
-    -->
-    
+    <button href="#" onclick="popup()"></button>
+
     <div class="toggle toggle--push toggle--push--glow">
         <input type="checkbox" id="toggle--push--glow" class="toggle--checkbox">
         <label class="toggle--btn" for="toggle--push--glow" data-label-on="on"  data-label-off="off"></label>
     </div>
-    
+    -->
 </body>
 
 </html>

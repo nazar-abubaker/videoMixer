@@ -29,202 +29,155 @@ button:hover, button:active {
     background:var(--darkRed);
 }
 
-/******************/
-@import url(http://fonts.googleapis.com/css?family=Francois+One);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans);
-@font-face {
-  font-family: 'Audiowide';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Audiowide"), local("Audiowide-Regular"), url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+.sidebar {
+    width:366px;
+    height:auto;
+    margin:1em;
+    position:absolute;
+    top:0;
+    display:block;
+    overflow: hidden;
+    opacity: 0.5;
 }
-body {
-  font-size: 62.5%;
-  background-color: #fff;
-  margin: 10px;
-  border: 1px solid #333;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+    
+.sidebar .dial {
+    width:366px;
+    height:287px;
+    margin-bottom:10em;
+    background-image:url('img/dials.png');
+    background-size: 366px 287px;
 }
 
+.left {float:left; left:0;}
+.right {float:right; right:0;}
+/*************/
+.the-button {
+    
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+            
+    
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    
+    padding: 0;
+    
+    
+    -webkit-box-shadow: 0 0 .5em rgba(0,0,0,1),
+        inset 0 .25em .3em rgba(255,255,255,.3),
+        inset 0 -.25em .3em rgba(0,0,0,.5);
+
+    -moz-box-shadow: 0 0 .5em rgba(0,0,0,1),
+        inset 0 .25em .3em rgba(255,255,255,.3),
+        inset 0 -.25em .3em rgba(0,0,0,.5);
+
+    box-shadow: 0 0 .5em rgba(0,0,0,1),
+        inset 0 .25em .3em rgba(255,255,255,.3),
+        inset 0 -.25em .3em rgba(0,0,0,.5);
+
+        
+    font: inherit;
+    
+    cursor: pointer;
+
+}
+
+.the-button:before {
+    content: " ";
+    
+    position: absolute;
+    
+    /*
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    */
+    
+    left: 3%;
+    top: 3%;
+    width: 95%;
+    height: 95%;
+    
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0.14) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.14)), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0.14) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(top,  rgba(255,255,255,0.14) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0.14) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,0.14) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+    
+    
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
 
 
-/* =====================================================
-   Some defaults across all toggle demos
-   ===================================================== */
-.toggle {
-  display: block;
-  text-align: center;
-  margin-top: 40px;
-  user-select: none;
+.the-button:active {
+    -webkit-box-shadow: 0 0 .5em rgba(0,0,0,1),
+        inset 0 .1em .3em rgba(0,0,0,.5),
+        inset 0 -.1em .3em rgba(0,0,0,.5);
+    -moz-box-shadow: 0 0 .5em rgba(0,0,0,1),
+        inset 0 .1em .3em rgba(0,0,0,.5),
+        inset 0 -.1em .3em rgba(0,0,0,.5);
+    box-shadow: 0 0 .5em rgba(0,0,0,1),
+        inset 0 .1em .3em rgba(0,0,0,.5),
+        inset 0 -.1em .3em rgba(0,0,0,.5);
+    
     -webkit-tap-highlight-color: transparent;
 
 }
 
-.toggle--checkbox {
-  display: none;
+.the-button:active:before {
+    top: 11.5%;
 }
 
-.toggle--btn {
-  display: block;
-  margin: 0 auto;
-  font-size: 1.4em;
-  transition: all 350ms ease-in;
-}
-.toggle--btn:hover {
-  cursor: pointer;
+.button-frame {
+    
+    top: 50%;
+  
+    position: relative;
+    z-index: 20;
+    
+    margin: 25% auto;
+    
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    
+    width: 15em;
+    height: 15em;
+
+    padding: 1em;
+    
+    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.9),
+        inset 0 .25em .125em rgba(255,255,255,.3),
+        inset 0 -.25em .125em rgba(0,0,0,.3);
+
+    -moz-box-shadow: 0 0 .25em rgba(0,0,0,.9),
+        inset 0 .25em .125em rgba(255,255,255,.3),
+        inset 0 -.25em .125em rgba(0,0,0,.3);
+
+    box-shadow: 0 0 .25em rgba(0,0,0,.9),
+        inset 0 .25em .125em rgba(255,255,255,.3),
+        inset 0 -.25em .125em rgba(0,0,0,.3);
+
+    
+    background: #cc0000;
+    
+    display: block;
 }
 
-.toggle--btn, .toggle--btn:before, .toggle--btn:after,
-.toggle--checkbox,
-.toggle--checkbox:before,
-.toggle--checkbox:after,
-.toggle--feature,
-.toggle--feature:before,
-.toggle--feature:after {
-  transition: all 250ms ease-in;
-}
-.toggle--btn:before, .toggle--btn:after,
-.toggle--checkbox:before,
-.toggle--checkbox:after,
-.toggle--feature:before,
-.toggle--feature:after {
-  content: '';
-  display: block;
-}
 
-
-/* ======================================================
-   Push button toggle
-   ====================================================== */
-.toggle--push .toggle--btn {
-  position: relative;
-  /*width: 50px;
-  height: 50px;*/
-  width:400px;
-  height:400px;
-  background-color: #f9f8f6;
-  border-radius: 50%;
-  box-shadow: 0 5px 10px 0px #333, 0 15px 20px 0px #cccccc;
-}
-.toggle--push .toggle--btn, .toggle--push .toggle--btn:before, .toggle--push .toggle--btn:after {
-  transition-duration: 150ms;
-}
-.toggle--push .toggle--btn:before {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 22.72727px;
-  height: 22.72727px;
-  border-radius: 50%;
-  background-color: #FF9900;
-  box-shadow: inset 0 0 0 5px #ccc, inset 0 0 0 14px #f9f8f6;
-}
-.toggle--push .toggle--btn:after {
-  position: absolute;
-  left: 50%;
-  top: 35%;
-  transform: translate(-50%, -50%);
-  width: 4px;
-  height: 12px;
-  background-color: #ccc;
-  box-shadow: 0 0 0 2.5px #f9f8f6;
-}
-.toggle--push .toggle--btn:hover:before {
-  box-shadow: inset 0 0 0 5px #b3b3b3, inset 0 0 0 14px #f9f8f6;
-}
-.toggle--push .toggle--btn:hover:after {
-  background-color: #b3b3b3;
-}
-.toggle--push .toggle--checkbox:checked + .toggle--btn {
-  box-shadow: 0 2px 5px 0px gray, 0 15px 20px 0px transparent;
-}
-.toggle--push .toggle--checkbox:checked + .toggle--btn:before {
-  box-shadow: inset 0 0 0 5px #FF9900, inset 0 0 0 14px #f9f8f6;
-}
-.toggle--push .toggle--checkbox:checked + .toggle--btn:after {
-  background-color: #FF9900;
-}
-
-.toggle--push--glow {
-  padding: 50px 0;
-  margin-bottom: -50px;
-}
-.toggle--push--glow .toggle--btn {
-  background-color: #dfdfdf;
-  box-shadow: 0 5px 10px 0px #333, 0 0 0 3px #444444, 0 0 8px 2px transparent, 0 0 0 6px #919191;
-}
-.toggle--push--glow .toggle--btn:before {
-  box-shadow: inset 0 0 0 5px #aaa, inset 0 0 0 14px #dfdfdf;
-}
-.toggle--push--glow .toggle--btn:after {
-  background-color: #aaa;
-  box-shadow: 0 0 0 2.5px #dfdfdf;
-}
-.toggle--push--glow .toggle--btn:hover:before {
-  box-shadow: inset 0 0 0 5px #777777, inset 0 0 0 14px #dfdfdf;
-}
-.toggle--push--glow .toggle--btn:hover:after {
-  background-color: #777777;
-}
-.toggle--push--glow .toggle--checkbox:checked + .toggle--btn {
-  box-shadow: 0 0px 8px 0 var(--red), 0 0 0 3px var(--red), 0 0 30px 0 var(--red), 0 0 0 6px #777777;
-}
-.toggle--push--glow .toggle--checkbox:checked + .toggle--btn:before {
-  box-shadow: inset 0 0 0 5px var(--red), inset 0 0 0 14px #dfdfdf;
-}
-.toggle--push--glow .toggle--checkbox:checked + .toggle--btn:after {
-  background-color: var(--red);
-}
-
-/* ======================================================
-   Neon toggle
-   ====================================================== */
-@keyframes neon {
-  0% {
-    text-shadow: 0 0 10px #fff, 0 0 15px  #fff, 0 0 25px  #fff, 0 0 40px  #FF9900, 0 0 70px  #FF9900, 0 0 90px  #FF9900, 0 0 90px  #FF9900;
-  }
-  100% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900;
-  }
-}
-.toggle--neon {
-  background-color: #222;
-  margin-top: 0;
-  padding: 50px 0;
-}
-.toggle--neon .toggle--btn {
-  font-family: Audiowide;
-  text-transform: uppercase;
-  font-size: 6.2em;
-  color: #333;
-  text-shadow: 0 0 10px transparent, 0 0 15px  transparent, 0 0 25px  transparent, 0 0 40px  transparent, 0 0 70px  transparent, 0 0 90px  transparent, 0 0 90px  transparent;
-}
-.toggle--neon .toggle--btn:before, .toggle--neon .toggle--btn:after {
-  display: inline-block;
-  margin: 0 20px;
-  transition: all 220ms ease-in-out;
-}
-.toggle--neon .toggle--btn:before {
-  content: attr(data-label-off);
-  animation: neon 1.5s ease-in-out infinite alternate;
-  animation-delay: 90ms;
-  color: #f1f1f1;
-}
-.toggle--neon .toggle--btn:after {
-  content: attr(data-label-on);
-}
-.toggle--neon .toggle--checkbox:checked + .toggle--btn:before {
-  animation: none;
-  color: #333;
-}
-.toggle--neon .toggle--checkbox:checked + .toggle--btn:after {
-  animation: neon 1.5s ease-in-out infinite alternate;
-  animation-delay: 90ms;
-  color: #f1f1f1;
+.plastic {
+    background: #b01e1e; /* Old browsers */
+    background: -moz-linear-gradient(top,  #b01e1e 0%, #920f0f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b01e1e), color-stop(100%,#920f0f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #b01e1e 0%,#920f0f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #b01e1e 0%,#920f0f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #b01e1e 0%,#920f0f 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #b01e1e 0%,#920f0f 100%); /* W3C */
 }
