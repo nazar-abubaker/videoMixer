@@ -1,259 +1,230 @@
+:root {
+    --red:#B90504;
+    --darkRed: #990100;
+    --grey: #333333;
+    --lightGray: #E8E8E8;
+    --white: #F6F6F6;
+}
+
 html, body {
-    font-family: 'Montserrat', sans-serif !important;
-    border:0 !important;
-    outline:0 !important;
+    background-image:url('img/greyBackground.png');
+    background-repeat:repeat;
+    font-size:14px;
+    touch-action: manipulation;
 }
 
-.message {
-    width:100%;
-    height:100%;
-    text-align: center;
+button {
+    display:block;
+    margin:15% auto;
+    background:var(--red);
+    outline:0;
+    border:0;
+    padding:10em;
+    border-radius: 50%;
+    box-shadow:0px 0px 0px 0px var(--darkRed), 
+               0px 0px 10px 0px rgba(0,0,0,0.4);
 }
 
-.sidebar, .slider2column {
-    display: none;
+button:hover, button:active {
+    background:var(--darkRed);
 }
 
-/*When user screen is landscape*/
-@media only screen and (orientation:landscape) {
-
-    html, body {
-     background-color:grey;
-     background-image:url('img/greyBackground.png');
-    }    
-
-    input, table {
-        display: block;
-    }
-
-    .message{
-        display:none;
-    }
-
-    #demo {
-        text-align: center;
-        font-size:24px;
-        color:rgba(0,0,0,0.5);
-        margin:2em 0;
-    }
-
-    .topMessage {
-        margin:0 auto 3em auto;
-        width:490px;
-        height:141px;
-        background:white;
-        border:1px solid rgba(255,255,255,0.5);
-        box-radius:11px;
-        box-shadow:inset 0px 1px 20px 0px rgba(0,0,0,0.2)
-    }
-    
-    .sidebar {
-        width:366px;
-        height:auto;
-        margin:1em;
-        position:absolute;
-        top:0;
-        display:block;
-        overflow: hidden;
-        opacity: 0.5;
-    }
-    
-    .sidebar .dial {
-    width:366px;
-    height:287px;
-    margin-bottom:1em;
-    background-image:url('img/dials.png');
-    background-size: 366px 287px;
-
-    }
-
-.left {float:left; left:0;}
-.right {float:right; right:0;}
-
-
-    /*******************/
- @charset "UTF-8";
-/* CSS by Steven Estrella. http://www.stevenestrella.com */
-/* The .slider and .slidervertical classes are for the range inputs. 
-	Set the z-index high so its on top. */
-
-.slider,
-.slidervertical {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  overflow: visible;
-  z-index: 99999;
+/******************/
+@import url(http://fonts.googleapis.com/css?family=Francois+One);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@font-face {
+  font-family: 'Audiowide';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Audiowide"), local("Audiowide-Regular"), url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
 }
-    
-/* slidershell exists only
-to provide a positioning context for the range input and other elements.*/
-
-.slidershell {
-  border: 0 none;
-  position: relative;
-  left: 0px;
-  top: 0px;
-  overflow: visible;
+body {
+  font-size: 62.5%;
+  background-color: #fff;
+  margin: 10px;
+  border: 1px solid #333;
 }
-/* .slidertrack is the visible track on which the user drags the thumb button. */
 
-.slidertrack {
-  border: 2px outset rgba(255,255,255,0.1);
-  border-radius: 4px;
-  position: absolute;
-  background:rgba(0,0,0,0.5);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-/* .sliderfill adds color (or a gradient as seen here) to the track as the user 
-	drags the thumb. */
 
-.sliderfill {
-    border-radius: 4px;
-    position: absolute;
-    opacity: 1;
-    pointer-events: none;
-}
-/* .sliderthumb can be any css you like including an image. 
-	The dimensions must match those found in the rule for 
-	input[type=range]::-webkit-slider-thumb. */
 
-.sliderthumb {
-  width: 100px;
-  height: 100px;
-  background-image: url('img/redSlider.png');
-  background-size: 100px 100px;
-  background-position: 0px 0px;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  border: 0 none;
-  padding: 0px;
-  margin: 0px;
+
+/* =====================================================
+   Some defaults across all toggle demos
+   ===================================================== */
+.toggle {
+  display: block;
   text-align: center;
-  pointer-events: none;
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
-}
-    
-/* First we have to make transparent all the default elements of the range input.
-	We use color:transparent to eliminate the default tick marks in IE. */
+  margin-top: 40px;
+  user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
-input[type=range]::-ms-track {
-  width: 100%;
-  height: 100%;
-  -webkit-appearance: none;
-  margin: 0px;
-  padding: 0px;
-  border: 0 none;
-  background: transparent;
-  color: transparent;
-  overflow: visible;
 }
 
-input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 100%;
-  -moz-appearance: none;
-  margin: 0px;
-  padding: 0px;
-  border: 0 none;
-  background: transparent;
-  color: transparent;
-  overflow: visible;
-}
-
-input[type=range] {
-  width: 100%;
-  height: 100%;
-  -webkit-appearance: none;
-  margin: 0px;
-  padding: 0px;
-  border: 0 none;
-  background: transparent;
-  color: transparent;
-  overflow: visible;
-}
-/* we need a separate rule for when the range input is to be vertical */
-
-input[type=range].slidervertical {
-  -webkit-appearance: slider-vertical;
-  writing-mode: bt-lr;
-  /* IE */
-  
-  opacity: 0.01;
-  /* needed to hide the default slider-vertical appearance */
-}
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: transparent;
-  border: transparent;
-}
-
-input[type=range]:focus {
-  outline: none;
-}
-/* Make the thumbs the same size as your custom sliderthumb. 
-	they will not be visible but they will be draggable. 	*/
-
-/*
-input[type=range]::-ms-thumb {
-  width: 40px;
-  height: 40px;
-  border-radius: 0px;
-  border: 0 none;
-  background: transparent;
-}
-
-input[type=range]::-moz-range-thumb {
-  width: 40px;
-  height: 40px;
-  border-radius: 0px;
-  border: 0 none;
-  background: transparent;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  width: 40px;
-  height: 40px;
-  border-radius: 0px;
-  border: 0 none;
-  background: transparent;
-  -webkit-appearance: none;
-}
-*/
-/* microsoft IE10+ and Edge - eliminates default fills before and after thumb */
-
-input[type=range]::-ms-fill-lower {
-  background: transparent;
-  border: 0 none;
-}
-
-input[type=range]::-ms-fill-upper {
-  background: transparent;
-  border: 0 none;
-}
-
-input[type=range]::-ms-tooltip {
+.toggle--checkbox {
   display: none;
-} 
+}
 
-    .slidervalue {color:transparent!important;}
+.toggle--btn {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.4em;
+  transition: all 350ms ease-in;
+}
+.toggle--btn:hover {
+  cursor: pointer;
+}
 
-    
-    /* other rules you may need for page styling */
-.slider2column,
-td,
-tr,
-th {
-    width: 100px;
-    border: 0 none !important;
-    margin:0 auto;}
-    
-    .slider2column {
-        display:block;
-    }
-/*******************/
+.toggle--btn, .toggle--btn:before, .toggle--btn:after,
+.toggle--checkbox,
+.toggle--checkbox:before,
+.toggle--checkbox:after,
+.toggle--feature,
+.toggle--feature:before,
+.toggle--feature:after {
+  transition: all 250ms ease-in;
+}
+.toggle--btn:before, .toggle--btn:after,
+.toggle--checkbox:before,
+.toggle--checkbox:after,
+.toggle--feature:before,
+.toggle--feature:after {
+  content: '';
+  display: block;
+}
 
-    
+
+/* ======================================================
+   Push button toggle
+   ====================================================== */
+.toggle--push .toggle--btn {
+  position: relative;
+  /*width: 50px;
+  height: 50px;*/
+  width:400px;
+  height:400px;
+  background-color: #f9f8f6;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px 0px #333, 0 15px 20px 0px #cccccc;
+}
+.toggle--push .toggle--btn, .toggle--push .toggle--btn:before, .toggle--push .toggle--btn:after {
+  transition-duration: 150ms;
+}
+.toggle--push .toggle--btn:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22.72727px;
+  height: 22.72727px;
+  border-radius: 50%;
+  background-color: #FF9900;
+  box-shadow: inset 0 0 0 5px #ccc, inset 0 0 0 14px #f9f8f6;
+}
+.toggle--push .toggle--btn:after {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 12px;
+  background-color: #ccc;
+  box-shadow: 0 0 0 2.5px #f9f8f6;
+}
+.toggle--push .toggle--btn:hover:before {
+  box-shadow: inset 0 0 0 5px #b3b3b3, inset 0 0 0 14px #f9f8f6;
+}
+.toggle--push .toggle--btn:hover:after {
+  background-color: #b3b3b3;
+}
+.toggle--push .toggle--checkbox:checked + .toggle--btn {
+  box-shadow: 0 2px 5px 0px gray, 0 15px 20px 0px transparent;
+}
+.toggle--push .toggle--checkbox:checked + .toggle--btn:before {
+  box-shadow: inset 0 0 0 5px #FF9900, inset 0 0 0 14px #f9f8f6;
+}
+.toggle--push .toggle--checkbox:checked + .toggle--btn:after {
+  background-color: #FF9900;
+}
+
+.toggle--push--glow {
+  padding: 50px 0;
+  margin-bottom: -50px;
+}
+.toggle--push--glow .toggle--btn {
+  background-color: #dfdfdf;
+  box-shadow: 0 5px 10px 0px #333, 0 0 0 3px #444444, 0 0 8px 2px transparent, 0 0 0 6px #919191;
+}
+.toggle--push--glow .toggle--btn:before {
+  box-shadow: inset 0 0 0 5px #aaa, inset 0 0 0 14px #dfdfdf;
+}
+.toggle--push--glow .toggle--btn:after {
+  background-color: #aaa;
+  box-shadow: 0 0 0 2.5px #dfdfdf;
+}
+.toggle--push--glow .toggle--btn:hover:before {
+  box-shadow: inset 0 0 0 5px #777777, inset 0 0 0 14px #dfdfdf;
+}
+.toggle--push--glow .toggle--btn:hover:after {
+  background-color: #777777;
+}
+.toggle--push--glow .toggle--checkbox:checked + .toggle--btn {
+  box-shadow: 0 0px 8px 0 var(--red), 0 0 0 3px var(--red), 0 0 30px 0 var(--red), 0 0 0 6px #777777;
+}
+.toggle--push--glow .toggle--checkbox:checked + .toggle--btn:before {
+  box-shadow: inset 0 0 0 5px var(--red), inset 0 0 0 14px #dfdfdf;
+}
+.toggle--push--glow .toggle--checkbox:checked + .toggle--btn:after {
+  background-color: var(--red);
+}
+
+/* ======================================================
+   Neon toggle
+   ====================================================== */
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 10px #fff, 0 0 15px  #fff, 0 0 25px  #fff, 0 0 40px  #FF9900, 0 0 70px  #FF9900, 0 0 90px  #FF9900, 0 0 90px  #FF9900;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900;
+  }
+}
+.toggle--neon {
+  background-color: #222;
+  margin-top: 0;
+  padding: 50px 0;
+}
+.toggle--neon .toggle--btn {
+  font-family: Audiowide;
+  text-transform: uppercase;
+  font-size: 6.2em;
+  color: #333;
+  text-shadow: 0 0 10px transparent, 0 0 15px  transparent, 0 0 25px  transparent, 0 0 40px  transparent, 0 0 70px  transparent, 0 0 90px  transparent, 0 0 90px  transparent;
+}
+.toggle--neon .toggle--btn:before, .toggle--neon .toggle--btn:after {
+  display: inline-block;
+  margin: 0 20px;
+  transition: all 220ms ease-in-out;
+}
+.toggle--neon .toggle--btn:before {
+  content: attr(data-label-off);
+  animation: neon 1.5s ease-in-out infinite alternate;
+  animation-delay: 90ms;
+  color: #f1f1f1;
+}
+.toggle--neon .toggle--btn:after {
+  content: attr(data-label-on);
+}
+.toggle--neon .toggle--checkbox:checked + .toggle--btn:before {
+  animation: none;
+  color: #333;
+}
+.toggle--neon .toggle--checkbox:checked + .toggle--btn:after {
+  animation: neon 1.5s ease-in-out infinite alternate;
+  animation-delay: 90ms;
+  color: #f1f1f1;
 }

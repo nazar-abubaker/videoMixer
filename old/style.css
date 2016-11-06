@@ -1,0 +1,259 @@
+html, body {
+    font-family: 'Montserrat', sans-serif !important;
+    border:0 !important;
+    outline:0 !important;
+}
+
+.message {
+    width:100%;
+    height:100%;
+    text-align: center;
+}
+
+.sidebar, .slider2column {
+    display: none;
+}
+
+/*When user screen is landscape*/
+@media only screen and (orientation:landscape) {
+
+    html, body {
+     background-color:grey;
+     background-image:url('img/greyBackground.png');
+    }    
+
+    input, table {
+        display: block;
+    }
+
+    .message{
+        display:none;
+    }
+
+    #demo {
+        text-align: center;
+        font-size:24px;
+        color:rgba(0,0,0,0.5);
+        margin:2em 0;
+    }
+
+    .topMessage {
+        margin:0 auto 3em auto;
+        width:490px;
+        height:141px;
+        background:white;
+        border:1px solid rgba(255,255,255,0.5);
+        box-radius:11px;
+        box-shadow:inset 0px 1px 20px 0px rgba(0,0,0,0.2)
+    }
+    
+    .sidebar {
+        width:366px;
+        height:auto;
+        margin:1em;
+        position:absolute;
+        top:0;
+        display:block;
+        overflow: hidden;
+        opacity: 0.5;
+    }
+    
+    .sidebar .dial {
+    width:366px;
+    height:287px;
+    margin-bottom:1em;
+    background-image:url('img/dials.png');
+    background-size: 366px 287px;
+
+    }
+
+.left {float:left; left:0;}
+.right {float:right; right:0;}
+
+
+    /*******************/
+ @charset "UTF-8";
+/* CSS by Steven Estrella. http://www.stevenestrella.com */
+/* The .slider and .slidervertical classes are for the range inputs. 
+	Set the z-index high so its on top. */
+
+.slider,
+.slidervertical {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+  z-index: 99999;
+}
+    
+/* slidershell exists only
+to provide a positioning context for the range input and other elements.*/
+
+.slidershell {
+  border: 0 none;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+/* .slidertrack is the visible track on which the user drags the thumb button. */
+
+.slidertrack {
+  border: 2px outset rgba(255,255,255,0.1);
+  border-radius: 4px;
+  position: absolute;
+  background:rgba(0,0,0,0.5);
+}
+/* .sliderfill adds color (or a gradient as seen here) to the track as the user 
+	drags the thumb. */
+
+.sliderfill {
+    border-radius: 4px;
+    position: absolute;
+    opacity: 1;
+    pointer-events: none;
+}
+/* .sliderthumb can be any css you like including an image. 
+	The dimensions must match those found in the rule for 
+	input[type=range]::-webkit-slider-thumb. */
+
+.sliderthumb {
+  width: 100px;
+  height: 100px;
+  background-image: url('img/redSlider.png');
+  background-size: 100px 100px;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border: 0 none;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  pointer-events: none;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+}
+    
+/* First we have to make transparent all the default elements of the range input.
+	We use color:transparent to eliminate the default tick marks in IE. */
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 100%;
+  -moz-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+
+input[type=range] {
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+/* we need a separate rule for when the range input is to be vertical */
+
+input[type=range].slidervertical {
+  -webkit-appearance: slider-vertical;
+  writing-mode: bt-lr;
+  /* IE */
+  
+  opacity: 0.01;
+  /* needed to hide the default slider-vertical appearance */
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+  border: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+/* Make the thumbs the same size as your custom sliderthumb. 
+	they will not be visible but they will be draggable. 	*/
+
+/*
+input[type=range]::-ms-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+  -webkit-appearance: none;
+}
+*/
+/* microsoft IE10+ and Edge - eliminates default fills before and after thumb */
+
+input[type=range]::-ms-fill-lower {
+  background: transparent;
+  border: 0 none;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: transparent;
+  border: 0 none;
+}
+
+input[type=range]::-ms-tooltip {
+  display: none;
+} 
+
+    .slidervalue {color:transparent!important;}
+
+    
+    /* other rules you may need for page styling */
+.slider2column,
+td,
+tr,
+th {
+    width: 100px;
+    border: 0 none !important;
+    margin:0 auto;}
+    
+    .slider2column {
+        display:block;
+    }
+/*******************/
+
+    
+}

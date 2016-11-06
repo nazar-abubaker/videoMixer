@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="reset.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style-new.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
+       
+    <script>
+        $( function() {
+            $("#slider-vertical").slider({
+            orientation: "vertical",
+                max: 200,
+                min: 0,
+                value: 0
+            });
+        })
+    </script>
+
+</head>
+<body onload="setValue(0,3,true)">
+    
+<!---------------------
+    If the iPad is not landscape
+---------------------->
+<div class="message">
+    <h1>Please rotate your device</h1>
+</div>  
+<!---------------------
+    otherwise, do this
+---------------------->
+
+    <div class="sidebar left">
+        <div class="dial"></div>
+        <div class="dial"></div>
+    </div>
+    
+    <div id="slider-vertical"></div>
+    
+
+    <div class="sidebar right">
+        <div class="dial"></div>
+        <div class="dial"></div>
+    </div>
+
+</body>
+</html>
+
